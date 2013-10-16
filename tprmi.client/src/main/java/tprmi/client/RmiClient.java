@@ -10,7 +10,7 @@ import tprmi.serveur.ReceiveMessageInterface;
 
 public class RmiClient {
 	
-	 static void main(String args[]){
+	 public static void main(String args[]){
 		
 		System.setSecurityManager(new RMISecurityManager());
 		ReceiveMessageInterface rmiServer;
@@ -18,7 +18,7 @@ public class RmiClient {
 		String serverAddress="127.0.0.1";
 		String serverPort="3232";
 		String text="Middleware";
-		System.out.println("sending" +text+ "to"+serverAddress+"."+serverPort);
+		System.out.println("sending " +text+ "to "+serverAddress+". "+serverPort);
 		try{
 			registry=LocateRegistry.getRegistry(serverAddress,(new Integer(serverPort)).intValue());
 			rmiServer=(ReceiveMessageInterface)(registry.lookup("rmiServer"));
